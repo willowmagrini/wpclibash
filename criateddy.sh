@@ -1,7 +1,3 @@
-#!/bin/bash
-#cria posts de video com o endereço:
-# https://www.youtube.com/watch?v=ZWzNWYN8qDA
-# para desenvolvimewnto do site para teddy
 
 wp post generate --count=100 --post_type='portfolio';
 
@@ -21,6 +17,8 @@ for i in $lista;
 	echo 'UPDATE wp_term_taxonomy SET count='$(($cat_count+1))' WHERE term_taxonomy_id='$cat > query2.sql ;
 	wp db query < query2.sql;
 	wp post update $i --post_title="Portfolio teste "$i
+	wp post update $i --post_content="in culpa qui officia dempor incididuesse cillum do   
+	 mollit anim id est labrud exercitaticaecat cupidat seectetur adipisicing eli"$i;
 	wp post meta update $i link_do_video "https://www.youtube.com/watch?v=ZWzNWYN8qDA";
 	count=$(($count+1));
 done
