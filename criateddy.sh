@@ -23,3 +23,8 @@ for i in $lista;
 	count=$(($count+1));
 done
 
+for i in $lista;
+	do
+		ATTACHMENT_ID="$(wp media import http://gzsihai.com/data/out/43/im-500200020.png --porcelain)"
+	 wp post meta add $i _thumbnail_id $ATTACHMENT_ID
+done
